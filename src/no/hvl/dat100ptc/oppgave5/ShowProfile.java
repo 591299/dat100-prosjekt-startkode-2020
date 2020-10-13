@@ -14,7 +14,7 @@ public class ShowProfile extends EasyGraphics {
 
 	private static final int MARGIN = 50;		// margin on the sides 
 	
-	private static int MAXBARHEIGHT = 500; // assume no height above 500 meters
+	private static int MAXBARHEIGH = 500; // assume no height above 500 meters
 	
 	private GPSPoint[] gpspoints;
 
@@ -46,12 +46,11 @@ public class ShowProfile extends EasyGraphics {
 		// ybase indicates the position on the y-axis where the columns should start
 	
 		int x = MARGIN,y;
-
-		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
-	
-		// TODO - SLUTT
+		
+			for(int i = 0; i< gpspoints.length; i++) {
+				int height = (ybase - (int)(gpspoints[i].getElevation()));
+				setColor(0, 0, 255);
+				drawLine(x+i, ybase, x+i, height);
+			}	
 	}
-
 }
